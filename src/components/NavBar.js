@@ -11,11 +11,12 @@ import {
 import { Input } from '@material-ui/core';
 import img from "../assets/img/profile.jpg"
 
-const NavBar = () => {
+const NavBar = ({handleHomeContent}) => {
 
     const handleSidebar = () => {
         let sidebar = document.querySelector('.sidebar')
         sidebar.classList.toggle('active')
+        handleHomeContent()
     }
 
     return (

@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import NavBar from './components/NavBar' 
-import './App.css'
+import './assets/styles/App.scss'
 
-const App = () => {
+const App = () => { 
+  const handleHomeContent = () => {
+    let homeContent = document.querySelector('.home_content')
+    homeContent.classList.toggle('active')
+  }
+
   return (
     <div>
-      <NavBar />
+      <NavBar handleHomeContent={handleHomeContent}/>
       <div className="home_content">
+        <h1 className="text"> Hola Mundo!!! </h1>
       </div>
     </div>
   )
