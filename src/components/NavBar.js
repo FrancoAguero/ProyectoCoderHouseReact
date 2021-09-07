@@ -25,7 +25,7 @@ const NavBar = ({handleHomeContent}) => {
                 <div className="logo_content">
                     <div className="logo">
                         <Camera />
-                        <div className="logo_name">CodingLab</div>
+                        <div className="logo_name">QuantumTech</div>
                     </div>
                     <div id="btn" onClick={handleSidebar}>
                         <Menu/>
