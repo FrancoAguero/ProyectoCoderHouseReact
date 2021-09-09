@@ -66,6 +66,7 @@ body {
 
             .tooltip {
                 position: absolute;
+                z-index: 2;
                 left: 122px;
                 top: 0;
                 transform: translate(-50%, -50%);
@@ -240,10 +241,12 @@ body {
 }
 
 .home_content {
-    position: relative;
+    position: absolute;
+    z-index: 0;
     height: 100%;
     width: calc(100% - 78px);
     left: 78px;
+    padding: 20px;
     transition: all 0.5s ease;
 
     .text {

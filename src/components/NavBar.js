@@ -41,12 +41,19 @@ const NavBar = ({handleHomeContent}) => {
                     </li> */}
                     <li>
                         <a href="">
+                            <i><ShoppingCart /></i>
+                            <span className="links_name">Order</span>
+                        </a>
+                        <span className="tooltip">Order</span>
+                    </li>
+                    <li>
+                        <a href="">
                             <i><Person /></i>
                             <span className="links_name">User</span>
                         </a>
                         <span className="tooltip">User</span>
                     </li>
-                    <li>
+                    {/* <li>
                         <a href="">
                             <i><QuestionAnswer /></i>
                             <span className="links_name">Mesagges</span>
@@ -66,14 +73,7 @@ const NavBar = ({handleHomeContent}) => {
                             <span className="links_name">File Manager</span>
                         </a>
                         <span className="tooltip">File Manager</span>
-                    </li>
-                    <li>
-                        <a href="">
-                            <i><ShoppingCart /></i>
-                            <span className="links_name">Order</span>
-                        </a>
-                        <span className="tooltip">Order</span>
-                    </li>
+                    </li> 
                     <li>
                         <a href="">
                             <i><FavoriteBorder /></i>
@@ -87,7 +87,7 @@ const NavBar = ({handleHomeContent}) => {
                             <span className="links_name">Settings</span>
                         </a>
                         <span className="tooltip">Settings</span>
-                    </li>
+                    </li> */}
                 </ul>
                 <div className="profile_content">
                     <div className="profile">
