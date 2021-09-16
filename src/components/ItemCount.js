@@ -37,9 +37,9 @@ const ItemCount = ({ initialState }) => {
         <div style={styles.container}>
             <Avatar style={styles.counter}>{count}</Avatar>
             <ButtonGroup variant="contained" color="primary" aria-label="contained primary button group">
-                <Button onClick={() => handleClick('imcrementar')}> +1 </Button>
-                <Button onClick={() => handleClick('resetear')}> reset </Button>
                 <Button onClick={() => handleClick('decrementar')}> -1 </Button>
+                <Button onClick={() => handleClick('resetear')}> reset </Button>
+                <Button onClick={() => handleClick('imcrementar')}> +1 </Button>
             </ButtonGroup>
         </div>
     )

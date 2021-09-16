@@ -1,6 +1,9 @@
 //React
 import React, { useState } from 'react'
 
+//router
+import { Link } from 'react-router-dom'
+
 //Icons
 import { 
         Menu, Camera, Person, Search, QuestionAnswer,
@@ -40,27 +43,27 @@ const NavBar = ({handleHomeContent}) => {
                         <span className="tooltip">Search</span>
                     </li> */}
                     <li>
-                        <a href="">
+                        <Link to="/">
                             <i><ShoppingCart /></i>
-                            <span className="links_name">Order</span>
-                        </a>
+                            <span className="links_name"> Order </span>
+                        </Link>
                         <span className="tooltip">Order</span>
                     </li>
                     <li>
-                        <a href="">
+                        <Link to="/counter">
                             <i><Person /></i>
-                            <span className="links_name">User</span>
-                        </a>
+                            <span className="links_name"> User </span>
+                        </Link>
                         <span className="tooltip">User</span>
                     </li>
-                    {/* <li>
-                        <a href="">
+                    <li>
+                        <Link to="/">
                             <i><QuestionAnswer /></i>
-                            <span className="links_name">Mesagges</span>
-                        </a>
+                            <span className="links_name"> Mesagges</span>
+                        </Link>
                         <span className="tooltip">Mesagges</span>
                     </li>
-                    <li>
+                    {/* <li>
                         <a href="">
                             <i><PieChart /></i>
                             <span className="links_name">Analitycs</span>
