@@ -6,6 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { Divider } from '@material-ui/core';
+import { useHistory } from 'react-router';
 
 
 const useStyles = makeStyles({
@@ -20,16 +21,22 @@ const useStyles = makeStyles({
     },
 });
 
-const CardContainer = ({img, title, description}) => {
+const CardContainer = ({id, img, title, price}) => {
     const classes = useStyles()
+
+    const history = useHistory()
+
+    const handleClick = () => {
+        history.push(`/itemDetail/${id}`)
+    }
 
     return (
         <div>
-            <Card className={classes.root}>
+            <Card className={classes.root} onClick={handleClick}>
                 <CardActionArea>
                     <CardMedia
                         className={classes.media}
-                        image={img}
+                        image={require(`../assets/img/${title}.jpg`)?.default}
                         title="Contemplative Reptile"
                     />
                     <CardContent>
@@ -38,7 +45,7 @@ const CardContainer = ({img, title, description}) => {
                             {title}
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
-                            
+                            ${price}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
