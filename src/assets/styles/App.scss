@@ -246,9 +246,10 @@ body {
     height: 100%;
     width: calc(100% - 78px);
     left: 78px;
-    padding: 20px;
+    // padding: 20px;
     transition: all 0.5s ease;
     overflow-y: scroll;
+    overflow-x: hidden;
 
     .text {
         font-size: 25px; 
@@ -261,4 +262,88 @@ body {
 .home_content.active {
     width: calc(100% - 240px);
     left: 240px;
+}
+
+.title_container {
+    position: relative !important;
+    padding: 0 !important;
+    background: linear-gradient(to right,rgb(156, 223, 243), rgb(0, 139, 231), rgb(0, 25, 252)) ;
+
+    
+    .home_title {
+        color: royalblue;
+        padding: 30px;
+
+        .title_tienda {
+            font-weight: 100;
+        }
+
+        .title_online {
+            font-weight: 700;
+        }
+    }
+    
+    .home_img_background {
+        display: flex;
+        justify-content: center;
+        
+        .home_img {
+            width: 80%;
+            height: 80%;
+        }
+    }
+
+    button {
+        height: 50px;
+        width: 200px;
+        border: none;
+        border-radius: 20px;
+        color: #ffff;
+        background: rgb(97, 156, 243);
+        box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
+        font-weight: 900;
+        font-family: sans-serif;
+        margin-top: 10px;
+
+        &:hover {
+            background: darken(rgb(97, 156, 243), $amount: 10);
+            cursor: pointer;
+        }
+    }
+
+    .background_curve {
+        position: absolute;
+        height: 200px;
+        width: 100%;
+        bottom: 0;
+
+        &::before{
+            content: "";
+            display: block;
+            position: absolute;
+            border-radius: 100%;
+            width: 55%;
+            height: 100%;
+            background: linear-gradient(to right,rgb(0, 145, 231), rgb(0, 110, 231), rgb(0, 60, 231), rgb(0, 25, 252)) ;
+            transform: translate(85%, 34.3%);
+            z-index: -1;
+        }
+
+        &::after{
+            content: "";
+            display: block;
+            position: absolute;
+            border-radius: 100%;
+            width: 55%;
+            height: 100%;
+            background: rgb(255,255,255);
+            transform: translate(-10%, 65%);
+        }
+    }
+}
+
+
+.product_container {
+    margin-top: 50px !important;
+    padding: 20px;
 }

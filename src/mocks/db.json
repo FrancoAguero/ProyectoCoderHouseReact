@@ -9,7 +9,8 @@
                 "state": false,
                 "percent": 10
             },
-            "description": "description del producto"
+            "description": "description del producto",
+            "category": "Mother"
         },
         {
             "id": 2,
@@ -21,7 +22,8 @@
                 "state": true,
                 "percent": 30
             },
-            "description": "description del producto"
+            "description": "description del producto",
+            "category": ""
         },
         {
             "id": 3,
@@ -33,7 +35,8 @@
                 "state": false,
                 "percent": 10
             },
-            "description": "description del producto"
+            "description": "description del producto",
+            "category": "Memoria Ram"
         },
         {
             "id": 4,
@@ -45,7 +48,8 @@
                 "state": false,
                 "percent": 10
             },
-            "description": "description del producto"
+            "description": "description del producto",
+            "category": "Placas de Videos"
         },
         {
             "id": 5,
@@ -57,7 +61,8 @@
                 "state": true,
                 "percent": 50
             },
-            "description": "description del producto"
+            "description": "description del producto",
+            "category": "gabinetes"
         },
         {
             "id": 6,
@@ -69,7 +74,8 @@
                 "state": false,
                 "percent": 10
             },
-            "description": "description del producto"
+            "description": "description del producto",
+            "category": ""
         }
     ]
 }

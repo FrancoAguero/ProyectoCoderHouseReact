@@ -13,6 +13,7 @@ import ItemDetailContainer from './pages/ItemDetailContainer'
 
 //Style
 import './assets/styles/App.scss';
+import Category from './pages/Category';
 
 
 const App = () => { 
@@ -29,6 +30,7 @@ const App = () => {
           <Route exact path={"/"} component={Home}/>
           <Route exact path={"/counter"} component={Counter}/>
           <Route exact path={"/itemDetail/:itemId"} component={ItemDetailContainer}/>
+          <Route exact path={"/category/:category"} component={Category}/>
         </Switch>
       </div>
     </BrowserRouter>

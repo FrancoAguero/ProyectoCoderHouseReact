@@ -45,16 +45,16 @@ const NavBar = ({handleHomeContent}) => {
                     <li>
                         <Link to="/">
                             <i><ShoppingCart /></i>
-                            <span className="links_name"> Order </span>
+                            <span className="links_name"> Tienda </span>
                         </Link>
-                        <span className="tooltip">Order</span>
+                        <span className="tooltip"> Tienda </span>
                     </li>
                     <li>
                         <Link to="/counter">
                             <i><Person /></i>
                             <span className="links_name"> User </span>
                         </Link>
-                        <span className="tooltip">User</span>
+                        <span className="tooltip"> User </span>
                     </li>
                     <li>
                         <Link to="/">
