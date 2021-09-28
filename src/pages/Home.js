@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Grid, List, ListItem, ListItemText, Typography } from '@material-ui/core';
 import ItemList from '../components/ItemList';
 
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 const Home = () => {
     const [products, setProducts] = useState([])
@@ -39,7 +39,9 @@ const Home = () => {
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis non nihil exercitationem at dolores animi? Cupiditate provident nihil 
                         repellat, corporis totam, esse similique reiciendis consequatur assumenda quidem mollitia expedita dolorum.
                     </Typography>
-                    <button>Ver Productos</button>
+                    <Link to="/shop">
+                        <button>Ver Productos</button>
+                    </Link>
                 </Grid>
                 <Grid item xs={6} className="home_img_background">
                     <img src={require('../assets/img/3967148.png').default} className="home_img" alt="" />

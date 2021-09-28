@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 
 //Material UI
-import { Avatar, ButtonGroup, Button } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
+
+//style
+import '../assets/styles/DetailCard.scss'
 
 const styles = {
     container: {
         display: "flex",
-        justifyContent: 'center',
-        flexDirection: "column",
-        alignItems: 'center'
+        alignItems: 'center',
     },
     counter: {
         margin: '20px',
@@ -18,7 +19,7 @@ const styles = {
     }
 }
 
-const ItemCount = ({ initialState }) => {
+const ItemCount = ({ initialState = 1 }) => {
     const [count, setCount] = useState(initialState)
 
     const handleClick = (type) => {
@@ -26,21 +27,27 @@ const ItemCount = ({ initialState }) => {
             setCount(previousState => previousState + 1)
         }
         if(type === 'decrementar') {
-            setCount(previousState => previousState - 1)
+            setCount(previousState => {
+                if(previousState > 1) {
+                    return previousState - 1
+                } else {
+                    return 1
+                }
+            })
         } 
-        if(type === 'resetear') {
-            setCount(initialState)
-        }
     }
     
     return (
         <div style={styles.container}>
-            <Avatar style={styles.counter}>{count}</Avatar>
-            <ButtonGroup variant="contained" color="primary" aria-label="contained primary button group">
-                <Button onClick={() => handleClick('decrementar')}> -1 </Button>
-                <Button onClick={() => handleClick('resetear')}> reset </Button>
-                <Button onClick={() => handleClick('imcrementar')}> +1 </Button>
-            </ButtonGroup>
+                <Button color="primary" className="button" onClick={() => handleClick('decrementar')}> 
+                    <Typography variant="h4"> - </Typography> 
+                </Button>
+                <div className="counter"> 
+                    {count}
+                </div>
+                <Button color="primary" className="button" onClick={() => handleClick('imcrementar')}> 
+                    <Typography variant="h4"> + </Typography> 
+                </Button>
         </div>
     )
 }

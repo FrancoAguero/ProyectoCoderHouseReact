@@ -1,8 +1,106 @@
 .detail_container {
+    position: relative !important;
     margin: 20px !important;
     height: 90vh;
     width: 98% !important;
     border-width: 5px;
     border-radius: 20px;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.4);
+
+    .rectangle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        height: 50%;
+        width: 100%;
+        background: #0797ff;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .title {
+        margin-top: 2rem;
+        color: white;
+    }
+
+    .description {
+        margin-top: 2rem;
+        color: white;
+    }
+
+    .img_container {
+        height: 400px !important;
+        padding-top: 2rem;
+
+        .primary_img {
+            height: 400px;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+    .secondary_img {
+        height: 100px;
+        width: 100px;
+        border: 1px solid;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        object-fit: scale-down;
+        background: #fff;
+    }
+
+    .star_container {
+        margin-top: 1rem;
+
+        .star {
+            color: #a0a0a0;
+    
+            &.active {
+                color: #ffc933;
+            }
+        }
+    }
+
+    .text_counter {
+        margin-top: 3rem;
+        margin-left: 3.5rem;
+    }
+
+    .buy_button {
+        position: absolute;
+        color: #ffff;
+        bottom: 50px;
+        height: 50px;
+        width: 200px;
+        background: #f14646;
+        border-style: none;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+
+        &:hover {
+            background: darken($color: #f14646, $amount: 20);
+        }
+    }
+
+    .price {
+        position: absolute;
+        color: #1d1b31;
+        bottom: 150px;
+    }
+}
+
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    color: white;
+    width: 50px;
+    height: 50px;
+    background: #1d1b31;
+}
+
+.button {
+    height: 40px;
+    border-radius: 20px !important;
 }
