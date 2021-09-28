@@ -1,5 +1,11 @@
+//React
 import React from 'react'
+
+//Material ui
 import { Grid, Typography } from '@material-ui/core';
+
+//Style
+import '../assets/styles/DetailCard.scss';
 
 
 const ItemDetailCard = ({title, price}) => {
@@ -8,23 +14,25 @@ const ItemDetailCard = ({title, price}) => {
             height: '500px',
             width: '100%'
         }
-    }
+    };
     
     return (
-        <Grid container spacing={5} justifyContent="center" alignItems="center">
-            <Grid item xs={6}>
-                <img src={require(`../assets/img/${title}.jpg`)?.default} style={style.img} alt="" />
+        <Grid container spacing={5} className="detail_container">
+            <Grid item container xs={6}>
+                <Grid item xs={12}>
+                    <img src={require(`../assets/img/${title}.jpg`)?.default} style={style.img} alt="" />
+                </Grid>
             </Grid>
-            <Grid item xs={6}>
-                <Typography gutterBottom variant="h5" component="h2">
+            <Grid item xs={6} className="">
+                <Typography variant="h5" component="h2">
                     {title}
                 </Typography>
-                <Typography gutterBottom variant="h5" component="h2">
+                <Typography variant="h5" component="h2">
                     Precio: ${price}
                 </Typography>
             </Grid>
         </Grid>
-    )
-}
+    );
+};
 
-export default ItemDetailCard
+export default ItemDetailCard;

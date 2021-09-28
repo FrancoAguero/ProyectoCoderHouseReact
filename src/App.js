@@ -14,6 +14,7 @@ import ItemDetailContainer from './pages/ItemDetailContainer'
 //Style
 import './assets/styles/App.scss';
 import Category from './pages/Category';
+import Shop from './pages/Shop';
 
 
 const App = () => { 
@@ -28,6 +29,7 @@ const App = () => {
       <div className="home_content">
         <Switch>
           <Route exact path={"/"} component={Home}/>
+          <Route exact path={"/shop"} component={Shop}/>
           <Route exact path={"/counter"} component={Counter}/>
           <Route exact path={"/itemDetail/:itemId"} component={ItemDetailContainer}/>
           <Route exact path={"/category/:category"} component={Category}/>

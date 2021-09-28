@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 import { 
         Menu, Camera, Person, Search, QuestionAnswer,
         PieChart, Folder, ShoppingCart, FavoriteBorder,
-        Settings, ExitToApp 
+        Settings, ExitToApp, Home 
 } from '@material-ui/icons'
 
 import { Input } from '@material-ui/core';
@@ -35,34 +35,34 @@ const NavBar = ({handleHomeContent}) => {
                     </div>
                 </div>
                 <ul className="nav_list">
-                    {/* <li>
+                    <li>
                         <a href="">
                             <i className="bx-search"><Search /></i>
-                            <input type="text" onChange={handleChange} value={state} placeholder="search"/>
+                            <input type="text" placeholder="search"/>
                         </a>
                         <span className="tooltip">Search</span>
-                    </li> */}
+                    </li>
                     <li>
                         <Link to="/">
+                            <i><Home /></i>
+                            <span className="links_name"> Inicio </span>
+                        </Link>
+                        <span className="tooltip"> Inicio </span>
+                    </li>
+                    <li>
+                        <Link to="/shop">
                             <i><ShoppingCart /></i>
                             <span className="links_name"> Tienda </span>
                         </Link>
                         <span className="tooltip"> Tienda </span>
                     </li>
-                    <li>
-                        <Link to="/counter">
-                            <i><Person /></i>
-                            <span className="links_name"> User </span>
-                        </Link>
-                        <span className="tooltip"> User </span>
-                    </li>
-                    <li>
+                    {/* <li>
                         <Link to="/">
                             <i><QuestionAnswer /></i>
                             <span className="links_name"> Mesagges</span>
                         </Link>
                         <span className="tooltip">Mesagges</span>
-                    </li>
+                    </li> */}
                     {/* <li>
                         <a href="">
                             <i><PieChart /></i>

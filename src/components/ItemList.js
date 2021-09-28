@@ -12,8 +12,8 @@ const ItemList = ({ products }) => {
         <>
             {
                 products?.map((product) => (
-                        <Grid key={product.id} item xs={4}>
-                            <Item id={product.id} img={product.img} title={product.name} price={product.price}/>
+                        <Grid key={product.id} item xs={3}>
+                            <Item id={product.id} img={product.img} title={product.name} price={product.price} discount={product.discount}/>
                         </Grid>
                     )
                 )

@@ -12,7 +12,7 @@ const Home = () => {
     const [error, setError] = useState(null)
 
     const getProducts = () => {
-        fetch("http://localhost:3001/products")
+        fetch("http://localhost:3001/products?discount.state=true")
         .then(( response ) => {
             if( response.ok ) {
                 return response.json()
@@ -46,29 +46,11 @@ const Home = () => {
                 </Grid>
                 <div className="background_curve"/>
             </Grid>
-            <List component="nav" aria-label="secondary mailbox folders">
-                <ListItem button>
-                    <NavLink to={`/category/gabinetes`}>
-                        Gabinetes
-                    </NavLink>
-                </ListItem>
-                <ListItem button>
-                    <NavLink to={`/category/Mother`}>
-                        Mothers
-                    </NavLink>
-                </ListItem>
-                <ListItem button>
-                    <NavLink to={`/category/Memoria Ram`}>
-                        Memoria Ram
-                    </NavLink>
-                </ListItem>
-                <ListItem button>
-                    <NavLink to={`/category/Placas de Videos`}>
-                        Placas de Videos
-                    </NavLink>
-                </ListItem>
-            </List>
-            <Grid container spacing={5} justifyContent="center" alignItems="center" className="product_container">
+            <Grid container spacing={5} justifyContent="center" alignItems="center" className="home_product_container">
+                <Grid item xs={12} className="title_discount">
+                    <Typography variant="h3" className="title">Descuentos</Typography>
+                    <Typography variant="subtitle1" className="subtitle"> hasta el 80%</Typography>
+                </Grid>
                 { loading && <h1>Cargando...</h1> }
                 { error && ( <p> Se ha producido un error: {error.status} {error.statusText} </p> ) }
                 { products && ( <ItemList products={ products }/> ) }

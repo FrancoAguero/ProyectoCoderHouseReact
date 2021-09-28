@@ -6,11 +6,11 @@
             "price": 6390,
             "stock": 20,
             "discount": {
-                "state": false,
+                "state": true,
                 "percent": 10
             },
             "description": "description del producto",
-            "category": "Mother"
+            "category": "Mothers"
         },
         {
             "id": 2,
@@ -23,7 +23,7 @@
                 "percent": 30
             },
             "description": "description del producto",
-            "category": ""
+            "category": "Procesadores"
         },
         {
             "id": 3,
@@ -36,7 +36,7 @@
                 "percent": 10
             },
             "description": "description del producto",
-            "category": "Memoria Ram"
+            "category": "Memorias Ram"
         },
         {
             "id": 4,
@@ -75,7 +75,7 @@
                 "percent": 10
             },
             "description": "description del producto",
-            "category": ""
+            "category": "Fuentes"
         }
     ]
 }

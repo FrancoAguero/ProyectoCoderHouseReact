@@ -25,11 +25,11 @@ const ItemDetail = () => {
     },[])
 
     return (
-        <div>
+        <>
             { loading && <h1>Cargando...</h1> }
             { error && ( <p> Se ha producido un error: {error.status} {error.statusText} </p> ) }
             { product && ( <Item id={product.id} img={product.img} title={product.name} price={product.price}/> ) }
-        </div>
+        </>
     )
 }
 

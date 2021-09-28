@@ -1,19 +1,13 @@
 import React, { useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
-import { Divider } from '@material-ui/core';
+import { Typography, makeStyles, Grid, Chip } from '@material-ui/core';
 import { useHistory } from 'react-router';
+import {Star, LocalOffer } from '@material-ui/icons';
+
+//Estilos
+import "../assets/styles/ProductCard.scss";
 
 
 const useStyles = makeStyles({
-    root: {
-        width: '80%',
-        boxShadow: '8px 8px 10px rgba(0, 0, 0, 0.25);'
-    },
     media: {
         height: "30vh",
         width: "100%",
@@ -21,7 +15,7 @@ const useStyles = makeStyles({
     },
 });
 
-const CardContainer = ({id, img, title, price}) => {
+const CardContainer = ({id, img, title, price, discount}) => {
     const classes = useStyles()
 
     const history = useHistory()
@@ -30,26 +24,46 @@ const CardContainer = ({id, img, title, price}) => {
         history.push(`/itemDetail/${id}`)
     }
 
+    const persent = (price, percent) => {
+        return Math.trunc(price - ((price * percent) / 100))
+    }
+
     return (
         <div>
-            <Card className={classes.root} onClick={handleClick}>
-                <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image={require(`../assets/img/${title}.jpg`)?.default}
-                        title="Contemplative Reptile"
-                    />
-                    <CardContent>
-                    <Divider />
-                        <Typography gutterBottom variant="h5" component="h2">
-                            {title}
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                            ${price}
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-            </Card>
+            <Grid container justifyContent="center" spacing={2} className="card">
+                <Grid item xs={12}>
+                    <img src={require(`../assets/img/${title}.jpg`).default} className="card_img" alt={`${title}`} onClick={handleClick}/>
+                </Grid>
+                <Grid item xs={8}>
+                    <Typography variant="h6" className="title">{title}</Typography>
+                    <Typography variant="body2" className="subtitle">{title}</Typography>
+                    { discount.state ? (
+                        <>
+                            <Typography variant="body2" className="discount">
+                                {`$ ${price}`}
+                            </Typography>
+                            <Typography variant="h5" className="price">
+                                {`$ ${persent(price, discount.percent)}`}
+                            </Typography>
+                        </>
+                    ) : (
+                        <>
+                            <Typography variant="h5" className="price">
+                                {`$ ${price}`}
+                            </Typography>
+                        </>
+                    )}
+                    <Star className="card_star active"/>
+                    <Star className="card_star active"/>
+                    <Star className="card_star active"/>
+                    <Star className="card_star"/>
+                    <Star className="card_star"/>
+                </Grid>
+                <Grid item xs={12} className="button_container">
+                    <button>Agregar al carro</button>
+                </Grid>
+                { discount.state && <Chip icon={<LocalOffer className="discount_icon"/>} label={`${discount.percent}%`} className="discount_chip"/> }
+            </Grid>
         </div>
     )
 }
