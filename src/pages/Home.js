@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Grid, List, ListItem, ListItemText, Typography } from '@material-ui/core';
 import ItemList from '../components/ItemList';
 
-import { NavLink, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
     const [products, setProducts] = useState([])

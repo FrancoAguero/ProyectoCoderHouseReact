@@ -308,6 +308,7 @@ body {
     }
 
     button {
+        position: absolute;
         height: 50px;
         width: 200px;
         border: none;
@@ -318,6 +319,7 @@ body {
         font-weight: 900;
         font-family: sans-serif;
         margin-top: 10px;
+        z-index: 5;
 
         &:hover {
             background: darken(rgb(97, 156, 243), $amount: 10);

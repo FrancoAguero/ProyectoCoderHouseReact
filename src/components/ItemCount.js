@@ -19,9 +19,7 @@ const styles = {
     }
 }
 
-const ItemCount = ({ initialState = 1 }) => {
-    const [count, setCount] = useState(initialState)
-
+const ItemCount = ({ count, setCount }) => {
     const handleClick = (type) => {
         if(type === 'imcrementar'){
             setCount(previousState => previousState + 1)

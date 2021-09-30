@@ -8,7 +8,6 @@ const Shop = () => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
 
-
     const getProducts = () => {
         fetch("http://localhost:3001/products")
         .then(( response ) => {

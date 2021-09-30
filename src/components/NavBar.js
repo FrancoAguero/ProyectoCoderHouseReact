@@ -1,21 +1,27 @@
 //React
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 //router
 import { Link } from 'react-router-dom'
 
 //Icons
 import { 
-        Menu, Camera, Person, Search, QuestionAnswer,
-        PieChart, Folder, ShoppingCart, FavoriteBorder,
+        Menu, Camera, Storefront, Search, ShoppingCart,
         Settings, ExitToApp, Home 
 } from '@material-ui/icons'
 
 import { Input } from '@material-ui/core';
 import img from "../assets/img/profile.jpg"
+import { useCart } from '../context/CartContext';
 
 const NavBar = ({handleHomeContent}) => {
+    const { cart, cartQuantity } = useCart()
+    const [quantity, setQuantity] = useState(0)
 
+    useEffect(() => {
+        setQuantity(cartQuantity())
+    }, [cart])
+    
     const handleSidebar = () => {
         let sidebar = document.querySelector('.sidebar')
         sidebar.classList.toggle('active')
@@ -51,18 +57,18 @@ const NavBar = ({handleHomeContent}) => {
                     </li>
                     <li>
                         <Link to="/shop">
-                            <i><ShoppingCart /></i>
+                            <i><Storefront /></i>
                             <span className="links_name"> Tienda </span>
                         </Link>
                         <span className="tooltip"> Tienda </span>
                     </li>
-                    {/* <li>
-                        <Link to="/">
-                            <i><QuestionAnswer /></i>
-                            <span className="links_name"> Mesagges</span>
+                    <li>
+                        <Link to="/cart">
+                            <i><ShoppingCart /></i>
+                            <span className="links_name"> Carrito {quantity}</span>
                         </Link>
-                        <span className="tooltip">Mesagges</span>
-                    </li> */}
+                        <span className="tooltip">Carrito</span>
+                    </li>
                     {/* <li>
                         <a href="">
                             <i><PieChart /></i>

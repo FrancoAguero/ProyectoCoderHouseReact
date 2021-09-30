@@ -8,14 +8,16 @@ import NavBar from './components/NavBar';
 
 //Pages
 import Home from './pages/Home';
-import Counter from './pages/Counter';
-import ItemDetailContainer from './pages/ItemDetailContainer'
+import ItemDetailContainer from './pages/ItemDetailContainer';
+import Cart from './pages/Cart';
 
 //Style
 import './assets/styles/App.scss';
 import Category from './pages/Category';
 import Shop from './pages/Shop';
 
+//Context
+import { CartProvider } from './context/CartContext';
 
 const App = () => { 
   const handleHomeContent = () => {
@@ -25,16 +27,18 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <NavBar handleHomeContent={handleHomeContent}/>
-      <div className="home_content">
-        <Switch>
-          <Route exact path={"/"} component={Home}/>
-          <Route exact path={"/shop"} component={Shop}/>
-          <Route exact path={"/counter"} component={Counter}/>
-          <Route exact path={"/itemDetail/:itemId"} component={ItemDetailContainer}/>
-          <Route exact path={"/category/:category"} component={Category}/>
-        </Switch>
-      </div>
+      <CartProvider>
+        <NavBar handleHomeContent={handleHomeContent}/>
+        <div className="home_content">
+          <Switch>
+            <Route exact path={"/"} component={Home}/>
+            <Route exact path={"/shop"} component={Shop}/>
+            <Route exact path={"/cart"} component={Cart}/>
+            <Route exact path={"/itemDetail/:itemId"} component={ItemDetailContainer}/>
+            <Route exact path={"/category/:category"} component={Category}/>
+          </Switch>
+        </div>
+      </CartProvider>
     </BrowserRouter>
   );
 };

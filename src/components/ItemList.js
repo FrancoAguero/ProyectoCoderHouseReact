@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 //Custom Components
 import Item from './Item';
 
 //Material UI
 import { Grid } from '@material-ui/core';
+import { useCart } from '../context/CartContext';
 
 
 const ItemList = ({ products }) => {
+    const { cart } = useCart()
+
+    useEffect(() => {
+        console.log(cart)
+    }, [cart])
+    
     return (
         <>
             {

@@ -10,12 +10,16 @@ import { Star } from '@material-ui/icons';
 
 //Style
 import '../assets/styles/DetailCard.scss';
+import { useCart } from '../context/CartContext';
 
 
-const ItemDetailCard = ({title, price}) => {
+const ItemDetailCard = ({id, name, price }) => {
+    const { addItem } = useCart()
     const [cart, setCart] = useState(false)
+    const [count, setCount] = useState(1)
 
     const handleClick = () => {
+        addItem({id, name, price}, count)
         setCart((previousState) => !previousState)
     }
     
@@ -23,24 +27,24 @@ const ItemDetailCard = ({title, price}) => {
         <Grid container spacing={5} className="detail_container">
             <Grid item container xs={6}>
                 <Grid item xs={12} className="img_container">
-                    <img src={require(`../assets/img/${title}.jpg`)?.default} className="primary_img" alt="" />
+                    <img src={require(`../assets/img/${name}.jpg`)?.default} className="primary_img" alt="" />
                 </Grid>
                 <Grid item xs={3}>
-                    <img src={require(`../assets/img/${title}.jpg`)?.default} className="secondary_img" alt="" />
+                    <img src={require(`../assets/img/${name}.jpg`)?.default} className="secondary_img" alt="" />
                 </Grid>
                 <Grid item xs={3}>
-                    <img src={require(`../assets/img/${title}.jpg`)?.default} className="secondary_img" alt="" />
+                    <img src={require(`../assets/img/${name}.jpg`)?.default} className="secondary_img" alt="" />
                 </Grid>
                 <Grid item xs={3}>
-                    <img src={require(`../assets/img/${title}.jpg`)?.default} className="secondary_img" alt="" />
+                    <img src={require(`../assets/img/${name}.jpg`)?.default} className="secondary_img" alt="" />
                 </Grid>
                 <Grid item xs={3}>
-                    <img src={require(`../assets/img/${title}.jpg`)?.default} className="secondary_img" alt="" />
+                    <img src={require(`../assets/img/${name}.jpg`)?.default} className="secondary_img" alt="" />
                 </Grid>
             </Grid>
             <Grid item xs={6} className="">
                 <Typography variant="h4" component="h2" className="title">
-                    {title}
+                    {name}
                 </Typography>
                 <div className="star_container">
                     <Star className="star active"/>
@@ -58,7 +62,7 @@ const ItemDetailCard = ({title, price}) => {
                         <Typography variant="body1" className="text_counter">
                             Cantidad
                         </Typography>
-                        <Counter />
+                        <Counter count={count} setCount={setCount}/>
                     </>
                     :
                     <></>

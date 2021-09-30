@@ -1,27 +1,23 @@
 import React, { useEffect } from 'react';
-import { Typography, makeStyles, Grid, Chip } from '@material-ui/core';
+import { Typography, Grid, Chip } from '@material-ui/core';
 import { useHistory } from 'react-router';
 import {Star, LocalOffer } from '@material-ui/icons';
 
 //Estilos
 import "../assets/styles/ProductCard.scss";
-
-
-const useStyles = makeStyles({
-    media: {
-        height: "30vh",
-        width: "100%",
-        objectFit: 'cover'
-    },
-});
+import { useCart } from '../context/CartContext';
 
 const CardContainer = ({id, img, title, price, discount}) => {
-    const classes = useStyles()
+    const { addItem } = useCart()
 
     const history = useHistory()
 
-    const handleClick = () => {
+    const handleNavigation = () => {
         history.push(`/itemDetail/${id}`)
+    }
+
+    const handleClick = () => {
+        addItem({id, title, price, discount}, 1)
     }
 
     const persent = (price, percent) => {
@@ -32,7 +28,7 @@ const CardContainer = ({id, img, title, price, discount}) => {
         <div>
             <Grid container justifyContent="center" spacing={2} className="card">
                 <Grid item xs={12}>
-                    <img src={require(`../assets/img/${title}.jpg`).default} className="card_img" alt={`${title}`} onClick={handleClick}/>
+                    <img src={require(`../assets/img/${title}.jpg`).default} className="card_img" alt={`${title}`} onClick={handleNavigation}/>
                 </Grid>
                 <Grid item xs={8}>
                     <Typography variant="h6" className="title">{title}</Typography>
@@ -60,7 +56,7 @@ const CardContainer = ({id, img, title, price, discount}) => {
                     <Star className="card_star"/>
                 </Grid>
                 <Grid item xs={12} className="button_container">
-                    <button>Agregar al carro</button>
+                    <button onClick={handleClick}> Agregar al carro </button>
                 </Grid>
                 { discount.state && <Chip icon={<LocalOffer className="discount_icon"/>} label={`${discount.percent}%`} className="discount_chip"/> }
             </Grid>
