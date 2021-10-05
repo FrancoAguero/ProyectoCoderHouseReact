@@ -11,8 +11,8 @@ import {
 } from '@material-ui/icons'
 
 import { Input } from '@material-ui/core';
-import img from "../assets/img/profile.jpg"
-import { useCart } from '../context/CartContext';
+import img from "../../assets/img/profile.jpg"
+import { useCart } from '../../context/CartContext';
 
 const NavBar = ({handleHomeContent}) => {
     const { cart, cartQuantity } = useCart()

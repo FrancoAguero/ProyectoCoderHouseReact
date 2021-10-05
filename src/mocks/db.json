@@ -1,81 +1,629 @@
 {
-    "products": [{
+"products": 
+    [
+        {
             "id": 1,
             "name": "Mother Asrock H310CM-HDV Socket 1151 8va Gen",
-            "img": "",
+            "img": "img/mothers/intel/Mother Asrock H310CM-HDV Socket 1151 8va Gen.jpg",
+            "price": 6390, 
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "mothers Intel"
+        },
+        {
+            "id": 2,
+            "name": "Mother ASUS PRIME Z590-A ATX S1200 1151",
+            "img": "img/mothers/intel/Mother ASUS PRIME Z590-A ATX S1200 1151.jpg",
+            "price": 13760, 
+            "stock": 20,
+            "discount": {
+                "state": true,
+                "percent": 20
+            },
+            "category": "mothers Intel"
+        },
+        {
+            "id": 3,
+            "name": "Mother Gigabyte Z590 AORUS ELITE 1151",
+            "img": "img/mothers/intel/Mother Gigabyte Z590 AORUS ELITE 1151.jpg",
+            "price": 21290, 
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "mothers Intel"
+        },
+        {
+            "id": 4,
+            "name": "Mother Gigabyte Z590 Vision G Socket 1200 1151",
+            "img": "img/mothers/intel/Mother Gigabyte Z590 Vision G Socket 1200 1151.jpg",
+            "price": 7900, 
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "mothers Intel"
+        },
+        {
+            "id": 5,
+            "name": "Mother Asrock B450M Steel Legend AM4",
+            "img": "img/mothers/amd/Mother Asrock B450M Steel Legend AM4.jpg",
+            "price": 6450, 
+            "stock": 20,
+            "discount": {
+                "state": true,
+                "percent": 10
+            },
+            "category": "mothers amd"
+        },
+        {
+            "id": 6,
+            "name": "Mother ASUS TUF B450M-PLUS II AM4",
+            "img": "img/mothers/amd/Mother ASUS TUF B450M-PLUS II AM4.jpg",
+            "price": 7280, 
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "mothers amd"
+        },
+        {
+            "id": 7,
+            "name": "Mother Gigabyte B450 AORUS M RGB",
+            "img": "img/mothers/amd/Mother Gigabyte B450 AORUS M RGB.jpg",
+            "price": 13380,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "mothers amd"
+        },
+        {
+            "id": 8,
+            "name": "Mother Gigabyte B450M AORUS ELITE RGB",
+            "img": "img/mothers/amd/Mother Gigabyte B450M AORUS ELITE RGB.jpg",
+            "price": 34110, 
+            "stock": 20,
+            "discount": {
+                "state": true,
+                "percent": 50
+            },
+            "category": "mothers amd"
+        },
+        {
+            "id": 9,
+            "name": "Procesador Intel Core i3 10100F 4.3GHz",
+            "img": "img/procesadores/intel/Procesador Intel Core i3 10100F 4.3GHz.jpg",
+            "price": 19500, 
+            "stock": 20,
+            "discount": {
+                "state": true,
+                "percent": 10
+            },
+            "category": "procesadores intel"
+        },
+        {
+            "id": 10,
+            "name": "Procesador Intel Core i5 9400 4.1GHz Turbo 1151 9th Gen",
+            "img": "img/procesadores/intel/Procesador Intel Core i5 9400 4.1GHz Turbo 1151 9th Gen.jpg",
+            "price": 32010, 
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "procesadores intel"
+        },
+        {
+            "id": 11,
+            "name": "Procesador Intel Core i7 9700F 4.7GHz",
+            "img": "img/procesadores/intel/Procesador Intel Core i7 9700F 4.7GHz.jpg",
+            "price": 43250, 
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "procesadores intel"
+        },
+        {
+            "id": 12,
+            "name": "Procesador Intel Core i9 10900KA 5.3GHz",
+            "img": "img/procesadores/intel/Procesador Intel Core i9 10900KA 5.3GHz.jpg",
+            "price": 66500, 
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "procesadores intel"
+        },
+        {
+            "id": 13,
+            "name": "Procesador AMD A12 9800E 3.8Ghz",
+            "img": "img/procesadores/amd/Procesador AMD A12 9800E 3.8Ghz.jpg",
+            "price": 6390, 
+            "stock": 20,
+            "discount": {
+                "state": true,
+                "percent": 10
+            },
+            "category": "procesadores amd"
+        },
+        {
+            "id": 14,
+            "name": "Procesador AMD Athlon 3000G 3.5GHz",
+            "img": "img/procesadores/amd/Procesador AMD Athlon 3000G 3.5GHz.jpg",
+            "price": 12800, 
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "procesadores amd"
+        },
+        {
+            "id": 15,
+            "name": "Procesador AMD Ryzen 5 1600 AF Zen",
+            "img": "img/procesadores/amd/Procesador AMD Ryzen 5 1600 AF Zen.jpg",
+            "price": 20500, 
+            "stock": 20,
+            "discount": {
+                "state": true,
+                "percent": 10
+            },
+            "category": "procesadores amd"
+        },
+        {
+            "id": 16,
+            "name": "Procesador AMD Ryzen 9 5950X 4.9GHz",
+            "img": "img/procesadores/amd/Procesador AMD Ryzen 9 5950X 4.9GHz.jpg",
+            "price": 90330, 
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "procesadores amd"
+        },
+        {
+            "id": 17,
+            "name": "Memoria Adata DDR4 16GB 3000MHz",
+            "img": "img/memorias/ram/Memoria Adata DDR4 16GB 3000MHz.jpg",
+            "price": 3642,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "memorias ram"
+        },
+        {
+            "id": 18,
+            "name": "Memoria GeiL 2 DDR4 16GB 3000MHz",
+            "img": "img/memorias/ram/Memoria GeiL 2 DDR4 16GB 3000MHz.jpg",
+            "price": 5404,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "memorias ram"
+        },
+        {
+            "id": 19,
+            "name": "Memoria GeiL DDR4 8GB 3000MHz Orion RGB Black",
+            "img": "img/memorias/ram/Memoria GeiL DDR4 8GB 3000MHz Orion RGB Black.jpg",
+            "price": 4434,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "memorias ram"
+        },
+        {
+            "id": 20,
+            "name": "Memoria GeiL DDR4 16GB 3000MHz",
+            "img": "img/memorias/ram/Memoria GeiL DDR4 16GB 3000MHz.jpg",
+            "price": 5381,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "memorias ram"
+        },
+        {
+            "id": 21,
+            "name": "Memoria Kingston DDR4 8GB 2666MHz SODIMM",
+            "img": "img/memorias/sodimm/Memoria Kingston DDR4 8GB 2666MHz SODIMM.jpg",
+            "price": 7910,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "memorias sodimm"
+        },
+        {
+            "id": 22,
+            "name": "Memoria Team DDR4 16GB (2x8GB) SODIMM",
+            "img": "img/memorias/sodimm/Memoria Team DDR4 16GB (2x8GB) SODIMM.jpg",
+            "price": 13170,
+            "stock": 20,
+            "discount": {
+                "state": true,
+                "percent": 10
+            },
+            "category": "memorias sodimm"
+        },
+        {
+            "id": 23,
+            "name": "Memoria Team DDR4 16GB 2666MHz Elite SODIMM",
+            "img": "img/memorias/sodimm/Memoria Team DDR4 16GB 2666MHz Elite SODIMM.jpg",
+            "price": 23050,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "memorias sodimm"
+        },
+        {
+            "id": 24,
+            "name": "Memoria Team DDR4 16GB 2666MHz SODIMM",
+            "img": "img/memorias/sodimm/Memoria Team DDR4 16GB 2666MHz SODIMM.jpg",
+            "price": 11800,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "memorias sodimm"
+        },
+        {
+            "id": 25,
+            "name": "Placa de Video ASUS GeForce GTX 1660 SUPER 6GB",
+            "img": "img/placasdevideo/nvidia/Placa de Video ASUS GeForce GTX 1660 SUPER 6GB.jpg",
+            "price": 135500,
+            "stock": 20,
+            "discount": {
+                "state": true,
+                "percent": 10
+            },
+            "category": "placasV nvidia"
+        },
+        {
+            "id": 26,
+            "name": "Placa de Video PNY GeForce GTX 1660 Ti",
+            "img": "img/placasdevideo/nvidia/Placa de Video PNY GeForce GTX 1660 Ti.jpg",
+            "price": 107000,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "placasV nvidia"
+        },
+        {
+            "id": 27,
+            "name": "Placa de Video Zotac GeForce GTX 1650",
+            "img": "img/placasdevideo/nvidia/Placa de Video Zotac GeForce GTX 1650.jpg",
+            "price": 89000,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "placasV nvidia"
+        },
+        {
+            "id": 28,
+            "name": "Placa de Video Zotac GeForce RTX 3060",
+            "img": "img/placasdevideo/nvidia/Placa de Video Zotac GeForce RTX 3060.jpg",
+            "price": 27800,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "placasV nvidia"
+        },
+        {
+            "id": 29,
+            "name": "Placa de Video Asrock Radeon RX 570",
+            "img": "img/placasdevideo/amd/Placa de Video Asrock Radeon RX 570.jpg",
+            "price": 95467,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "placasV amd"
+        },
+        {
+            "id": 30,
+            "name": "Placa de Video Asrock Radeon RX 580",
+            "img": "img/placasdevideo/amd/Placa de Video Asrock Radeon RX 580.jpg",
+            "price": 125200,
+            "stock": 20,
+            "discount": {
+                "state": true,
+                "percent": 10
+            },
+            "category": "placasV amd"
+        },
+        {
+            "id": 31,
+            "name": "Placa de Video Asrock Radeon RX 6700 XT",
+            "img": "img/placasdevideo/amd/Placa de Video Asrock Radeon RX 6700 XT.jpg",
+            "price": 167098,
+            "stock": 20,
+            "discount": {
+                "state": true,
+                "percent": 10
+            },
+            "category": "placasV amd"
+        },
+        {
+            "id": 32,
+            "name": "Placa de Video XFX Radeon RX 6600 XT",
+            "img": "img/placasdevideo/amd/Placa de Video XFX Radeon RX 6600 XT.jpg",
+            "price": 14500,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "placasV amd"
+        },
+        {
+            "id": 33,
+            "name": "Disco Rígido Seagate 1TB Barracuda",
+            "img": "img/almacenamiento/duro/Disco Rígido Seagate 1TB Barracuda.jpg",
+            "price": 3450,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "disco duro"
+        },
+        {
+            "id": 34,
+            "name": "Disco Rígido Seagate 2TB Barracuda",
+            "img": "img/almacenamiento/duro/Disco Rígido Seagate 2TB Barracuda.jpg",
+            "price": 6390,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "disco duro"
+        },
+        {
+            "id": 35,
+            "name": "Disco Rígido WD 3TB PURPLE",
+            "img": "img/almacenamiento/duro/Disco Rígido WD 3TB PURPLE.jpg",
+            "price": 12450,
+            "stock": 20,
+            "discount": {
+                "state": true,
+                "percent": 30
+            },
+            "category": "disco duro"
+        },
+        {
+            "id": 36,
+            "name": "Disco Rigido WD 3TB Red",
+            "img": "img/almacenamiento/duro/Disco Rigido WD 3TB Red.jpg",
+            "price": 11000,
+            "stock": 20,
+            "discount": {
+                "state": true,
+                "percent": 10
+            },
+            "category": "disco duro"
+        },
+        {
+            "id": 37,
+            "name": "Disco Sólido SSD Crucial 1TB",
+            "img": "img/almacenamiento/solido/Disco Sólido SSD Crucial 1TB.jpg",
+            "price": 16778,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "disco solido"
+        },
+        {
+            "id": 38,
+            "name": "Disco Sólido SSD Crucial 240GB",
+            "img": "img/almacenamiento/solido/Disco Sólido SSD Crucial 240GB.jpg",
+            "price": 8679,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "disco solido"
+        },
+        {
+            "id": 39,
+            "name": "Disco Solido SSD Lexar 480GB",
+            "img": "img/almacenamiento/solido/Disco Solido SSD Lexar 480GB.jpg",
+            "price": 1300,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "disco solido"
+        },
+        {
+            "id": 40,
+            "name": "Disco Sólido SSD PNY 240GB",
+            "img": "img/almacenamiento/solido/Disco Sólido SSD PNY 240GB.jpg",
+            "price": 10983,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "disco solido"
+        },
+        {
+            "id": 41,
+            "name": "Disco Solido SSD Externo Adata SE770G 1TB",
+            "img": "img/almacenamiento/externo/Disco Solido SSD Externo Adata SE770G 1TB.jpg",
+            "price": 23000,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "disco externo"
+        },
+        {
+            "id": 42,
+            "name": "Disco Solido SSD Externo Team PD",
+            "img": "img/almacenamiento/externo/Disco Solido SSD Externo Team PD.jpg",
+            "price": 20000,
+            "stock": 20,
+            "discount": {
+                "state": true,
+                "percent": 10
+            },
+            "category": "disco externo"
+        },
+        {
+            "id": 43,
+            "name": "Disco SSD Externo Seagate 1TB",
+            "img": "img/almacenamiento/externo/Disco SSD Externo Seagate 1TB.jpg",
+            "price": 25000,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "disco externo"
+        },
+        {
+            "id": 44,
+            "name": "Disco SSD Externo Seagate 500GB",
+            "img": "img/almacenamiento/externo/Disco SSD Externo Seagate 500GB.jpg",
+            "price": 15004,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "disco externo"
+        },
+        {
+            "id": 45,
+            "name": "Gabinete ASUS TUF GT501",
+            "img": "img/gabinetes/Gabinete ASUS TUF GT501.jpg",
             "price": 6390,
             "stock": 20,
             "discount": {
                 "state": true,
                 "percent": 10
             },
-            "description": "description del producto",
-            "category": "Mothers"
-        },
-        {
-            "id": 2,
-            "name": "Procesador Intel Core i5 9400 4.1GHz Turbo 1151 9th Gen",
-            "img": "",
-            "price": 33500,
-            "stock": 20,
-            "discount": {
-                "state": true,
-                "percent": 30
-            },
-            "description": "description del producto",
-            "category": "Procesadores"
-        },
-        {
-            "id": 3,
-            "name": "Memoria GeiL DDR4 8GB 3000MHz Orion RGB Black",
-            "img": "",
-            "price": 5955,
-            "stock": 20,
-            "discount": {
-                "state": false,
-                "percent": 10
-            },
-            "description": "description del producto",
-            "category": "Memorias Ram"
-        },
-        {
-            "id": 4,
-            "name": "Placa de Video ASUS GeForce GTX 1660 SUPER 6GB GDDR6 OC TUF",
-            "img": "",
-            "price": 107300,
-            "stock": 20,
-            "discount": {
-                "state": false,
-                "percent": 10
-            },
-            "description": "description del producto",
-            "category": "Placas de Videos"
-        },
-        {
-            "id": 5,
-            "name": "Gabinete Corsair Crystal 680X RGB TG Smart White",
-            "img": "",
-            "price": 40181,
-            "stock": 20,
-            "discount": {
-                "state": true,
-                "percent": 50
-            },
-            "description": "description del producto",
             "category": "gabinetes"
         },
         {
-            "id": 6,
-            "name": "Fuente Aerocool Cylon 600W Full Range RGB 80 Plus Bronze",
-            "img": "../assets/img/Fuente Aerocool Cylon 600W Full Range RGB 80 Plus Bronze.jpg",
-            "price": 6650,
+            "id": 46,
+            "name": "Gabinete Corsair Crystal 680X RGB TG Smart White",
+            "img": "img/gabinetes/Gabinete Corsair Crystal 680X RGB TG Smart White.jpg",
+            "price": 11000,
             "stock": 20,
             "discount": {
                 "state": false,
                 "percent": 10
             },
-            "description": "description del producto",
-            "category": "Fuentes"
+            "category": "gabinetes"
+        },
+        {
+            "id": 47,
+            "name": "Gabinete Kolink Citadel Mesh RGB",
+            "img": "img/gabinetes/Gabinete Kolink Citadel Mesh RGB.jpg",
+            "price": 14567,
+            "stock": 20,
+            "discount": {
+                "state": true,
+                "percent": 10
+            },
+            "category": "gabinetes"
+        },
+        {
+            "id": 48,
+            "name": "Gabinete Kolink Void ARGB",
+            "img": "img/gabinetes/Gabinete Kolink Void ARGB.jpg",
+            "price": 12538,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "gabinetes"
+        },
+        {
+            "id": 49,
+            "name": "Fuente Aerocool Cylon 600W Full Range RGB 80 Plus Bronze",
+            "img": "img/fuentes/Fuente Aerocool Cylon 600W Full Range RGB 80 Plus Bronze.jpg",
+            "price": 3390,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "fuentes"
+        },
+        {
+            "id": 50,
+            "name": "Fuente ASUS ROG STRIX 750G",
+            "img": "img/fuentes/Fuente ASUS ROG STRIX 750G.jpg",
+            "price": 5390,
+            "stock": 20,
+            "discount": {
+                "state": true,
+                "percent": 10
+            },
+            "category": "fuentes"
+        },
+        {
+            "id": 51,
+            "name": "Fuente ASUS TUF 650B 80 Plus Bronze 650W",
+            "img": "img/fuentes/Fuente ASUS TUF 650B 80 Plus Bronze 650W.jpg",
+            "price": 4390,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "fuentes"
+        },
+        {
+            "id": 52,
+            "name": "Fuente Thermaltake Smart BX1 750W",
+            "img": "img/fuentes/Fuente Thermaltake Smart BX1 750W.jpg",
+            "price": 7390,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "category": "fuentes"
         }
     ]
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 // Material UI
 import { Grid, List, ListItem, ListItemText, Typography } from '@material-ui/core';
-import ItemList from '../components/ItemList';
+import ItemList from '../components/Item/ItemList';
 
 import { Link } from 'react-router-dom'
 

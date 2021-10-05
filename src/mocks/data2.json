@@ -1,0 +1,81 @@
+{
+    "products": [{
+            "id": 1,
+            "name": "Mother Asrock H310CM-HDV Socket 1151 8va Gen",
+            "img": "",
+            "price": 6390,
+            "stock": 20,
+            "discount": {
+                "state": true,
+                "percent": 10
+            },
+            "description": "description del producto",
+            "category": "Mothers"
+        },
+        {
+            "id": 2,
+            "name": "Procesador Intel Core i5 9400 4.1GHz Turbo 1151 9th Gen",
+            "img": "",
+            "price": 33500,
+            "stock": 20,
+            "discount": {
+                "state": true,
+                "percent": 30
+            },
+            "description": "description del producto",
+            "category": "Procesadores"
+        },
+        {
+            "id": 3,
+            "name": "Memoria GeiL DDR4 8GB 3000MHz Orion RGB Black",
+            "img": "",
+            "price": 5955,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "description": "description del producto",
+            "category": "Memorias Ram"
+        },
+        {
+            "id": 4,
+            "name": "Placa de Video ASUS GeForce GTX 1660 SUPER 6GB GDDR6 OC TUF",
+            "img": "",
+            "price": 107300,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "description": "description del producto",
+            "category": "Placas de Videos"
+        },
+        {
+            "id": 5,
+            "name": "Gabinete Corsair Crystal 680X RGB TG Smart White",
+            "img": "",
+            "price": 40181,
+            "stock": 20,
+            "discount": {
+                "state": true,
+                "percent": 50
+            },
+            "description": "description del producto",
+            "category": "gabinetes"
+        },
+        {
+            "id": 6,
+            "name": "Fuente Aerocool Cylon 600W Full Range RGB 80 Plus Bronze",
+            "img": "../assets/img/Fuente Aerocool Cylon 600W Full Range RGB 80 Plus Bronze.jpg",
+            "price": 6650,
+            "stock": 20,
+            "discount": {
+                "state": false,
+                "percent": 10
+            },
+            "description": "description del producto",
+            "category": "Fuentes"
+        }
+    ]
+}

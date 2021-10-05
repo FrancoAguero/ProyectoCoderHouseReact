@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 
 //Custom Component
-import Item from "../components/ItemDetail"
+import Item from "../components/ItemDetail/ItemDetail"
 
 const ItemDetail = () => {
     const [product, setProduct] = useState(null)

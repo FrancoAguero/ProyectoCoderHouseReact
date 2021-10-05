@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import { Grid, AppBar, Toolbar, Typography } from '@material-ui/core'
-import ItemList from '../components/ItemList'
+import ItemList from '../components/Item/ItemList'
 
 const Shop = () => {
     const [products, setProducts] = useState([])

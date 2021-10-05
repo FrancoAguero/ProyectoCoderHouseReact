@@ -5,7 +5,7 @@ import Item from './Item';
 
 //Material UI
 import { Grid } from '@material-ui/core';
-import { useCart } from '../context/CartContext';
+import { useCart } from '../../context/CartContext';
 
 
 const ItemList = ({ products }) => {
@@ -20,7 +20,7 @@ const ItemList = ({ products }) => {
             {
                 products?.map((product) => (
                         <Grid key={product.id} item xs={3}>
-                            <Item id={product.id} img={product.img} title={product.name} price={product.price} discount={product.discount}/>
+                            <Item id={product.id} img={product.img} name={product.name} price={product.price} discount={product.discount}/>
                         </Grid>
                     )
                 )

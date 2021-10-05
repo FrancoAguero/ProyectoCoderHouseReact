@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { Button, Typography } from '@material-ui/core';
 
 //style
-import '../assets/styles/DetailCard.scss'
+import '../../assets/styles/DetailCard.scss'
 
 const styles = {
     container: {

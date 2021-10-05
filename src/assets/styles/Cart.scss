@@ -1,0 +1,41 @@
+.cart_item_container {
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    box-shadow: 5px 5px 15px rgba($color: #000000, $alpha: 0.3);
+
+    img {
+        height: 120px;
+        width: 120px;
+    }
+
+    .cart_title {
+        padding-left: 5px;
+        color: rgb(173, 173, 173);
+        text-align: center;
+
+    }
+
+    .cart_title_value {
+        margin-top: 15px;
+        padding: 5px;
+        text-align: center;
+    }
+
+    .btn_delete {
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        background: #f14646;
+        border: none;
+        border-radius: 15px;
+        flex-basis: auto;
+        box-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.3);
+    }
+}
+
+

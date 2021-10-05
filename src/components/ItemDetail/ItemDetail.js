@@ -9,17 +9,17 @@ import { Grid, Link, Typography } from '@material-ui/core';
 import { Star } from '@material-ui/icons';
 
 //Style
-import '../assets/styles/DetailCard.scss';
-import { useCart } from '../context/CartContext';
+import '../../assets/styles/DetailCard.scss';
+import { useCart } from '../../context/CartContext';
 
 
-const ItemDetailCard = ({id, name, price }) => {
+const ItemDetailCard = ({id, img, name, price }) => {
     const { addItem } = useCart()
     const [cart, setCart] = useState(false)
     const [count, setCount] = useState(1)
 
     const handleClick = () => {
-        addItem({id, name, price}, count)
+        addItem({id, name, img, price}, count)
         setCart((previousState) => !previousState)
     }
     
@@ -27,19 +27,19 @@ const ItemDetailCard = ({id, name, price }) => {
         <Grid container spacing={5} className="detail_container">
             <Grid item container xs={6}>
                 <Grid item xs={12} className="img_container">
-                    <img src={require(`../assets/img/${name}.jpg`)?.default} className="primary_img" alt="" />
+                    <img src={require(`../../assets/${img}`)?.default} className="primary_img" alt="" />
                 </Grid>
                 <Grid item xs={3}>
-                    <img src={require(`../assets/img/${name}.jpg`)?.default} className="secondary_img" alt="" />
+                    <img src={require(`../../assets/${img}`)?.default} className="secondary_img" alt="" />
                 </Grid>
                 <Grid item xs={3}>
-                    <img src={require(`../assets/img/${name}.jpg`)?.default} className="secondary_img" alt="" />
+                    <img src={require(`../../assets/${img}`)?.default} className="secondary_img" alt="" />
                 </Grid>
                 <Grid item xs={3}>
-                    <img src={require(`../assets/img/${name}.jpg`)?.default} className="secondary_img" alt="" />
+                    <img src={require(`../../assets/${img}`)?.default} className="secondary_img" alt="" />
                 </Grid>
                 <Grid item xs={3}>
-                    <img src={require(`../assets/img/${name}.jpg`)?.default} className="secondary_img" alt="" />
+                    <img src={require(`../../assets/${img}`)?.default} className="secondary_img" alt="" />
                 </Grid>
             </Grid>
             <Grid item xs={6} className="">

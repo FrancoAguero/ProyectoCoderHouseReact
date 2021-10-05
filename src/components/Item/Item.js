@@ -4,10 +4,10 @@ import { useHistory } from 'react-router';
 import {Star, LocalOffer } from '@material-ui/icons';
 
 //Estilos
-import "../assets/styles/ProductCard.scss";
-import { useCart } from '../context/CartContext';
+import "../../assets/styles/ProductCard.scss";
+import { useCart } from '../../context/CartContext';
 
-const CardContainer = ({id, img, title, price, discount}) => {
+const CardContainer = ({id, img, name, price, discount}) => {
     const { addItem } = useCart()
 
     const history = useHistory()
@@ -17,7 +17,7 @@ const CardContainer = ({id, img, title, price, discount}) => {
     }
 
     const handleClick = () => {
-        addItem({id, title, price, discount}, 1)
+        addItem({id, name, img, price, discount}, 1)
     }
 
     const persent = (price, percent) => {
@@ -28,11 +28,11 @@ const CardContainer = ({id, img, title, price, discount}) => {
         <div>
             <Grid container justifyContent="center" spacing={2} className="card">
                 <Grid item xs={12}>
-                    <img src={require(`../assets/img/${title}.jpg`).default} className="card_img" alt={`${title}`} onClick={handleNavigation}/>
+                    <img src={require(`../../assets/${img}`).default} className="card_img" alt={`${name}`} onClick={handleNavigation}/>
                 </Grid>
                 <Grid item xs={8}>
-                    <Typography variant="h6" className="title">{title}</Typography>
-                    <Typography variant="body2" className="subtitle">{title}</Typography>
+                    <Typography variant="h6" className="title">{name}</Typography>
+                    <Typography variant="body2" className="subtitle">{name}</Typography>
                     { discount.state ? (
                         <>
                             <Typography variant="body2" className="discount">
