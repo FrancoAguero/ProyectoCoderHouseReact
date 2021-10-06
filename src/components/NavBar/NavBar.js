@@ -16,10 +16,8 @@ import { useCart } from '../../context/CartContext';
 
 const NavBar = ({handleHomeContent}) => {
     const { cart, cartQuantity } = useCart()
-    const [quantity, setQuantity] = useState(0)
 
     useEffect(() => {
-        setQuantity(cartQuantity())
     }, [cart])
     
     const handleSidebar = () => {
@@ -65,7 +63,8 @@ const NavBar = ({handleHomeContent}) => {
                     <li>
                         <Link to="/cart">
                             <i><ShoppingCart /></i>
-                            <span className="links_name"> Carrito {quantity}</span>
+                            {cart.length !== 0 && <div className="cart_quantity_bubble"><p>{cartQuantity()}</p></div>}
+                            <span className="links_name"> Carrito </span>
                         </Link>
                         <span className="tooltip">Carrito</span>
                     </li>

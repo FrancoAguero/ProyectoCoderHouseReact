@@ -1,28 +1,58 @@
-import React from 'react'
+import React from 'react';
 
 //Custom Components
-import ItemCart from "../components/ItemCart/ItemCart"
+import ItemCart from "../components/ItemCart/ItemCart";
 
 //Material UI
-import { Grid } from '@material-ui/core'
+import { Grid, Typography, Divider } from '@material-ui/core';
+
+//Style
+import "../assets/styles/Cart.scss";
 
 //Context
-import { useCart } from '../context/CartContext'
+import { useCart } from '../context/CartContext';
 
 const Cart = () => {
-    const { cart } = useCart()
+    const { cart,  getTotal } = useCart();
     
     return (
-        <Grid container justifyContent="center" alignItems="center">
-            {cart.length === 0 ? (
+        <Grid container justifyContent="center" alignItems="center" className="cart_container">
+            <Grid item xs={12}>
+                <Typography variant="h3">Carrito</Typography>
+            </Grid>
+            <Grid item xs={8}>
+                {cart.length === 0 ? (
                     <></>
-                ) : 
+                    ) : 
                     cart.map((item) => (
                         <ItemCart data={item}/>
-                    ))
-            }
+                        ))
+                }
+            </Grid>
+            <Grid item container xs={4}>
+                <Grid item xs={11} className="cart_total_detail">
+                    <Typography variant="h4" className="cart_total_title">Total de la compra</Typography>
+                    <Divider/>
+                    <Grid className="cart_total_subdetail">
+                        <Typography variant="inherit" className="cart_total_subtitle">Productos</Typography>
+                        <Typography variant="inherit" className="cart_total_value">{`$ ${getTotal()}`}</Typography>
+                    </Grid>
+                    <Grid className="cart_total_subdetail">
+                        <Typography variant="inherit" className="cart_total_subtitle">Envio</Typography>
+                        <Typography variant="inherit" className="cart_total_value">{`Free`}</Typography>
+                    </Grid>
+                    <Grid className="cart_total_subdetail">
+                        <Typography variant="inherit" className="cart_total_subtitle">Subtotal</Typography>
+                        <Typography variant="inherit" className="cart_total_value">{`$ ${getTotal()}`}</Typography>
+                    </Grid>
+                    <Grid className="cart_total_subdetail">
+                        <Typography variant="inherit" className="cart_total_subtitle">IVA 21%</Typography>
+                        <Typography variant="inherit" className="cart_total_value">{`$ ${getTotal()}`}</Typography>
+                    </Grid>
+                </Grid>
+            </Grid>
         </Grid>
-    )
-}
+    );
+};
 
-export default Cart
+export default Cart;
