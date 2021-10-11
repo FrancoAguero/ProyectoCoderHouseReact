@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import firebase from "firebase/compat/app";
+
+
 import { useParams } from 'react-router'
 
 //Custom Component
 import Item from "../components/ItemDetail/ItemDetail"
+import { getFirestore } from '../firebase'
 
 const ItemDetail = () => {
     const [product, setProduct] = useState(null)
@@ -11,17 +15,21 @@ const ItemDetail = () => {
     const { itemId } = useParams()
 
     useEffect(() => {
-        fetch(`http://localhost:3001/products/${itemId}`)
-        .then(( response ) => {
-            if( response.ok ) {
-                return response.json()
-            } else {
-                throw response
-            }
-        })
-        .then(( data ) => setProduct( data ))
-        .catch(( error ) => setError( error ))
-        .finally(setLoading( false ))
+        const db = getFirestore()
+        db.collection("products").doc(itemId).get()
+            .then((response) => {
+                if(response.exists){
+                    setProduct(response.data())
+                } else {
+                    console.log("No tiene datos")
+                }
+            })
+            .catch((error) => {
+                setError(error)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
     },[])
 
     return (

@@ -54,7 +54,7 @@ const NavBar = ({handleHomeContent}) => {
                         <span className="tooltip"> Inicio </span>
                     </li>
                     <li>
-                        <Link to="/shop">
+                        <Link to={{pathname: 'shop', search: "category"}} >
                             <i><Storefront /></i>
                             <span className="links_name"> Tienda </span>
                         </Link>

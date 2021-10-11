@@ -1,46 +1,45 @@
 import React, { useEffect, useState } from 'react'
 
-import { Grid, AppBar, Toolbar, Typography } from '@material-ui/core'
+import { Grid, CircularProgress } from '@material-ui/core'
 import ItemList from '../components/Item/ItemList'
+import { getFirestore } from '../firebase'
+import { useParams } from 'react-router'
+import CategoryBar from '../components/CategoryBar'
 
 const Shop = () => {
-    const [products, setProducts] = useState([])
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(null)
+    const [ products, setProducts ] = useState( [] )
+    const [ loading, setLoading ] = useState( true )
+    const [ error, setError ] = useState( null )
+    const [ anchorEL, setAnchorEL ] = useState( null )
 
-    const getProducts = () => {
-        fetch("http://localhost:3001/products")
-        .then(( response ) => {
-            if( response.ok ) {
-                return response.json()
-            } else {
-                throw response
-            }
-        })
-        .then(( data ) => setProducts( data ))
-        .catch(( error ) => setError( error ))
-        .finally(setLoading( false ))
-    }
+    const { category } = useParams()
+
+    console.log(category)
 
     useEffect(() => {
-        getProducts()
+        const db = getFirestore()
+        db.collection( "products" ).get()
+            .then(( response ) => {
+                if( response.empty ) {
+                    console.log("No tiene datos")
+                } else {
+                    setProducts( response.docs.map(( doc ) => ({ id: doc.id, ...doc.data() })) )
+                }
+            })
+            .catch(( error ) => {
+                setError( error )
+            })
+            .finally(() => {
+                setLoading( false )
+            })
     }, [])
 
     return (
         <>
-            <div className="category_bar">
-                <ul>
-                    <li>Mothers</li>
-                    <li>Procesadores</li>
-                    <li>Memorias Ram</li>
-                    <li>Placas de Viedos</li>
-                    <li>Gabinetes</li>
-                    <li>Fuentes</li>
-                </ul>
-            </div>
+            <CategoryBar />
             <Grid container spacing={5} justifyContent="center" alignItems="center" className="shop_product_container">
-                { loading && <h1>Cargando...</h1> }
-                { error && ( <p> Se ha producido un error: {error.status} {error.statusText} </p> ) }
+                { loading && <CircularProgress color="primary"/> }
+                { error && ( <p> Se ha producido un error: { error.status } { error.statusText } </p> ) }
                 { products && ( <ItemList products={ products }/> ) }
             </Grid>
         </>

@@ -1,32 +1,33 @@
 import React, { useEffect, useState } from 'react';
 
 // Material UI
-import { Grid, List, ListItem, ListItemText, Typography } from '@material-ui/core';
+import { Grid, List, ListItem, CircularProgress, Typography } from '@material-ui/core';
 import ItemList from '../components/Item/ItemList';
 
 import { Link } from 'react-router-dom'
+import { getFirestore } from '../firebase';
 
 const Home = () => {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
 
-    const getProducts = () => {
-        fetch("http://localhost:3001/products?discount.state=true")
-        .then(( response ) => {
-            if( response.ok ) {
-                return response.json()
-            } else {
-                throw response
-            }
-        })
-        .then(( data ) => setProducts( data ))
-        .catch(( error ) => setError( error ))
-        .finally(setLoading( false ))
-    }
-
     useEffect(() => {
-        getProducts()
+        const db = getFirestore()
+        db.collection("products").where('discount.state', '==', true).get()
+            .then((response) => {
+                if(response.empty){
+                    console.log("No tiene datos")
+                } else {
+                    setProducts(response.docs.map((doc) => ({id: doc.id, ...doc.data()})))
+                }
+            })
+            .catch((error) => {
+                setError(error)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
     }, [])
 
     return (
@@ -53,7 +54,7 @@ const Home = () => {
                     <Typography variant="h3" className="title">Descuentos</Typography>
                     <Typography variant="subtitle1" className="subtitle"> hasta el 80%</Typography>
                 </Grid>
-                { loading && <h1>Cargando...</h1> }
+                { loading && <CircularProgress color="primary"/> }
                 { error && ( <p> Se ha producido un error: {error.status} {error.statusText} </p> ) }
                 { products && ( <ItemList products={ products }/> ) }
             </Grid>
