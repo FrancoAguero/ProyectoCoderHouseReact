@@ -35,7 +35,6 @@ const App = () => {
             <Route exact path={"/shop"} component={Shop}/>
             <Route exact path={"/cart"} component={Cart}/>
             <Route exact path={"/itemDetail/:itemId"} component={ItemDetailContainer}/>
-            <Route exact path={"/category/:category"} component={Category}/>
           </Switch>
         </div>
       </CartProvider>

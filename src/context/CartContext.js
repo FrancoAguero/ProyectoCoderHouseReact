@@ -57,6 +57,14 @@ export const CartProvider = ({ children }) => {
         } else return 0
     };
 
+    const getIva = () => {
+        if(cart.length !== 0) {
+            const total = getTotal()
+            const iva = (total * 21) / 100
+            return Math.round(iva)
+        } else return 0
+    };
+
     //Cantidad de productos
     const cartQuantity = () => {
         if(cart.length === 0) {
@@ -70,7 +78,7 @@ export const CartProvider = ({ children }) => {
         }
     }
 
-    const value = { cart, addItem, removeItem, clear, isInCart, cartQuantity, getTotal };
+    const value = { cart, addItem, removeItem, clear, isInCart, cartQuantity, getTotal, getIva };
     
     return <CartContext.Provider value={value}> { children } </CartContext.Provider>;
 }; 
