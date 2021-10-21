@@ -69,6 +69,7 @@ body {
 
     ul {
         margin-top: 20px;
+        height: 85%;
         li {
             position: relative;
             height: 50px;
@@ -76,6 +77,10 @@ body {
             list-style: none;
             line-height: 50px;
             margin: 0 5px;
+
+            &.settings {
+                margin-top: 38em;
+            }
 
             .tooltip {
                 position: absolute;
@@ -183,6 +188,17 @@ body {
                     width: 45px;
                     object-fit: cover;
                     border-radius: 12px;
+                }
+
+                .profile_img {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 45px;
+                    width: 45px;
+                    border-radius: 12px;
+                    color: #000;
+                    background: rgb(177, 177, 177);
                 }
 
                 .name_job {
@@ -295,7 +311,7 @@ body {
 .title_container {
     position: relative !important;
     padding: 0 !important;
-    background: rgb(0, 139, 231) ;
+    background: #4658C9 ;
 
     
     .home_title {
@@ -328,7 +344,7 @@ body {
         border: none;
         border-radius: 20px;
         color: #ffff;
-        background: rgb(97, 156, 243);
+        background: #5668e0;
         box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
         font-weight: 900;
         font-family: sans-serif;
@@ -336,7 +352,7 @@ body {
         z-index: 5;
 
         &:hover {
-            background: darken(rgb(97, 156, 243), $amount: 10);
+            background: darken(#5668e0, $amount: 5);
             cursor: pointer;
         }
     }
@@ -354,7 +370,7 @@ body {
             border-radius: 100%;
             width: 55%;
             height: 100%;
-            background: rgb(0, 139, 231);
+            background: #4658C9;
             transform: translate(85%, 35%);
             z-index: -1;
         }

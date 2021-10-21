@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 //Router
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import PrivateRoute from "utils/PrivateRoute";
 
 //Components
 import NavBar from './components/NavBar/NavBar';
@@ -10,12 +11,10 @@ import NavBar from './components/NavBar/NavBar';
 import Home from './pages/Home';
 import ItemDetailContainer from './pages/ItemDetailContainer';
 import Cart from './pages/Cart';
-import LogIn from './pages/LogIn';
-import SignUp from './pages/SignUp'
+import LogInSignUp from './pages/LogInSignUp'
 
 //Style
 import './assets/styles/App.scss';
-import Category from './pages/Category';
 import Shop from './pages/Shop';
 
 //Context
@@ -27,12 +26,6 @@ const App = () => {
     let homeContent = document.querySelector( '.home_content' )
     homeContent.classList.toggle( 'active' )
   };
-  const [ login, setLogin ] = useState( false )
-
-  useEffect(() => {
-
-  }, [login])
-
 
   const LoginAprobed = () =>  {
     return( 
@@ -41,7 +34,7 @@ const App = () => {
         <div className="home_content">
             <Route exact path={ "/" } component={ Home }/>
             <Route exact path={ "/shop" } component={ Shop }/>
-            <Route exact path={ "/cart" } component={ Cart }/>
+            <PrivateRoute exact path={ "/cart" } component={ Cart }/>
             <Route exact path={ "/itemDetail/:itemId" } component={ ItemDetailContainer }/>
         </div>
     </div>
@@ -53,9 +46,8 @@ const App = () => {
       <AuthProvider>
       <CartProvider>
           <Switch>
-            <Route exact path={ "/login" } component={ LogIn }/>
-            <Route exact path={ "/signup" } component={ SignUp }/>
-            {login && <Route path="/" component={ LoginAprobed }/>}
+            <Route exact path={ "/logIn" } component={ LogInSignUp }/>
+            <Route path="/" component={ LoginAprobed }/>
           </Switch>
       </CartProvider>
       </AuthProvider>

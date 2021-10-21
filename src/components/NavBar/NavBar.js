@@ -2,23 +2,36 @@
 import React, { useEffect, useState } from 'react'
 
 //router
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 //Icons
 import { 
-        Menu, Camera, Storefront, Search, ShoppingCart,
-        Settings, ExitToApp, Home 
+        Menu, Camera, Storefront, ShoppingCart,
+        Settings, ExitToApp, Home, Person 
 } from '@material-ui/icons'
 
-import { Input } from '@material-ui/core';
-import img from "../../assets/img/profile.jpg"
+//Contexts
 import { useCart } from '../../context/CartContext';
+import { useAuth } from 'context/AuthContext';
+
 
 const NavBar = ({handleHomeContent}) => {
+    const { error, setError } = useState( "" )
     const { cart, cartQuantity } = useCart()
+    const { currentUser, logOut } = useAuth()
+    const history = useHistory()
+
+    const handleLogOut = async () => {
+        try {
+            await logOut()
+        } catch ( err ) {
+            console.log(err)
+        }
+    }
+    
 
     useEffect(() => {
-    }, [cart])
+    }, [cart, currentUser])
     
     const handleSidebar = () => {
         let sidebar = document.querySelector('.sidebar')
@@ -39,13 +52,6 @@ const NavBar = ({handleHomeContent}) => {
                     </div>
                 </div>
                 <ul className="nav_list">
-                    <li>
-                        <a href="">
-                            <i className="bx-search"><Search /></i>
-                            <input type="text" placeholder="search"/>
-                        </a>
-                        <span className="tooltip">Search</span>
-                    </li>
                     <li>
                         <Link to="/">
                             <i><Home /></i>
@@ -68,45 +74,24 @@ const NavBar = ({handleHomeContent}) => {
                         </Link>
                         <span className="tooltip">Carrito</span>
                     </li>
-                    {/* <li>
-                        <a href="">
-                            <i><PieChart /></i>
-                            <span className="links_name">Analitycs</span>
-                        </a>
-                        <span className="tooltip">Analitycs</span>
-                    </li>
-                    <li>
-                        <a href="">
-                            <i><Folder /></i>
-                            <span className="links_name">File Manager</span>
-                        </a>
-                        <span className="tooltip">File Manager</span>
-                    </li> 
-                    <li>
-                        <a href="">
-                            <i><FavoriteBorder /></i>
-                            <span className="links_name">Saved</span>
-                        </a>
-                        <span className="tooltip">Saved</span>
-                    </li>
-                    <li>
+                    <li className="settings">
                         <a href="">
                             <i><Settings /></i>
                             <span className="links_name">Settings</span>
                         </a>
                         <span className="tooltip">Settings</span>
-                    </li> */}
+                    </li>
                 </ul>
                 <div className="profile_content">
                     <div className="profile">
                         <div className="profile_details">
-                            <img src={img} alt="profile image" />
+                            <div className="profile_img" > <Person /> </div>
                             <div className="name_job">
-                                <div className="name">Franco Aguero</div>
+                                <div className="name">{ currentUser ? currentUser.email : "Perfil" }</div>
                                 <div className="job">Web Designer</div>
                             </div>
                         </div>
-                        <i id='log_out'> <ExitToApp /> </i>
+                        <i id='log_out' onClick={ handleLogOut }> <ExitToApp /> </i>
                     </div>
                 </div>
             </div>

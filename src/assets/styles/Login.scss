@@ -111,7 +111,7 @@
                 }
             }
 
-            button {
+            .confirm_button {
                 margin-top: 15%;
                 width: 80%;
                 height: 40px;
@@ -124,6 +124,13 @@
                 &:hover {
                     background: rgb(185, 15, 52);
                 }
+            }
+
+            .form_button {
+                position: absolute;
+                top: 4%;
+                right: 3%;
+                color: #fff !important;
             }
 
             p {
