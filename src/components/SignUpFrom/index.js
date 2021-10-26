@@ -51,6 +51,9 @@ const SignUpForm = ({ setSelectForm }) => {
         } catch ( err ) {
             if(err == "FirebaseError: Firebase: The email address is already in use by another account. (auth/email-already-in-use).") {
                 setError("El email ingresado ya esta en uso")
+            } else 
+            if (err == "FirebaseError: Firebase: Password should be at least 6 characters (auth/weak-password).") {
+                setError("La contraseña debe de tener mas de 6 caracteres")
             }
             console.log(`%%%%% ${ err }`)
         }

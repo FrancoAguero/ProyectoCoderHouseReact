@@ -28,6 +28,10 @@ const NavBar = ({handleHomeContent}) => {
             console.log(err)
         }
     }
+
+    const handleLogIn = () => {
+        history.push("/logIn")
+    }
     
 
     useEffect(() => {
@@ -60,7 +64,7 @@ const NavBar = ({handleHomeContent}) => {
                         <span className="tooltip"> Inicio </span>
                     </li>
                     <li>
-                        <Link to={{pathname: 'shop', search: "category"}} >
+                        <Link to="/shop" >
                             <i><Storefront /></i>
                             <span className="links_name"> Tienda </span>
                         </Link>
@@ -74,24 +78,19 @@ const NavBar = ({handleHomeContent}) => {
                         </Link>
                         <span className="tooltip">Carrito</span>
                     </li>
-                    <li className="settings">
-                        <a href="">
-                            <i><Settings /></i>
-                            <span className="links_name">Settings</span>
-                        </a>
-                        <span className="tooltip">Settings</span>
-                    </li>
                 </ul>
                 <div className="profile_content">
                     <div className="profile">
                         <div className="profile_details">
                             <div className="profile_img" > <Person /> </div>
                             <div className="name_job">
-                                <div className="name">{ currentUser ? currentUser.email : "Perfil" }</div>
-                                <div className="job">Web Designer</div>
+                                <div className="name">{ currentUser ? currentUser.email : "Log In" }</div>
+                                <div className="job">User</div>
                             </div>
                         </div>
-                        <i id='log_out' onClick={ handleLogOut }> <ExitToApp /> </i>
+                        { currentUser ?  <i id='log_out' onClick={ handleLogOut }> <img src={ require("assets/img/log-out.png").default } alt="" /> </i>
+                                    :    <i id='log_in' onClick={ handleLogIn }> <ExitToApp /> </i>
+                        }
                     </div>
                 </div>
             </div>

@@ -7,20 +7,34 @@ import Counter from './ItemCount';
 //Material ui
 import { Grid, Link, Typography } from '@material-ui/core';
 import { Star } from '@material-ui/icons';
+import  { useSnackbar } from "notistack"
+
 
 //Style
 import '../../assets/styles/DetailCard.scss';
+
+//Context
 import { useCart } from '../../context/CartContext';
+
+//Router
+import { useHistory } from "react-router-dom"
 
 
 const ItemDetailCard = ({id, img, name, price }) => {
     const { addItem } = useCart()
     const [cart, setCart] = useState(false)
     const [count, setCount] = useState(1)
+    const { enqueueSnackbar } = useSnackbar()
+    const history = useHistory()
 
     const handleClick = () => {
         addItem({id, name, img, price}, count)
+        enqueueSnackbar( `Se agrego ${ name } al carrito!`, { variant: "success" } )
         setCart((previousState) => !previousState)
+    }
+
+    const handleRoute = () => {
+        history.push("/cart")
     }
     
     return (
@@ -77,13 +91,11 @@ const ItemDetailCard = ({id, img, name, price }) => {
                         </Typography>
                     </button>
                     :
-                    <Link to="/shop">
-                        <button className="buy_button">
-                            <Typography variant="body1">
-                                Ir al Carro
-                            </Typography>
-                        </button>
-                    </Link>
+                    <button className="buy_button" onClick={handleRoute}>
+                        <Typography variant="body1">
+                            Ir al Carro
+                        </Typography>
+                    </button>
                 }
             </Grid>
             <div className="rectangle"/>

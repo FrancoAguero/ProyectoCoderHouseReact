@@ -20,6 +20,7 @@ import Shop from './pages/Shop';
 //Context
 import { CartProvider } from './context/CartContext';
 import { AuthProvider } from "./context/AuthContext";
+import { SnackbarProvider } from "notistack"
 
 const App = () => { 
   const handleHomeContent = () => {
@@ -34,7 +35,7 @@ const App = () => {
         <div className="home_content">
             <Route exact path={ "/" } component={ Home }/>
             <Route exact path={ "/shop" } component={ Shop }/>
-            <PrivateRoute exact path={ "/cart" } component={ Cart }/>
+            <Route exact path={ "/cart" } component={ Cart }/>
             <Route exact path={ "/itemDetail/:itemId" } component={ ItemDetailContainer }/>
         </div>
     </div>
@@ -45,10 +46,12 @@ const App = () => {
     <BrowserRouter>
       <AuthProvider>
       <CartProvider>
+      <SnackbarProvider maxSnack={3}>
           <Switch>
             <Route exact path={ "/logIn" } component={ LogInSignUp }/>
             <Route path="/" component={ LoginAprobed }/>
           </Switch>
+      </SnackbarProvider>
       </CartProvider>
       </AuthProvider>
     </BrowserRouter>

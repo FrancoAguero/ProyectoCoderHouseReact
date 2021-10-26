@@ -8,6 +8,12 @@
 .cart_container {
     padding: 20px;
 
+    .cart_empty {
+        position: absolute;
+        top: 40%;
+        left: 25%;
+    }
+
     .cart_item_container {
         margin-top: 15px !important;
         margin-bottom: 15px !important;
@@ -25,7 +31,6 @@
             padding-left: 5px;
             color: rgb(173, 173, 173);
             text-align: center;
-    
         }
     
         .cart_title_value {
@@ -33,7 +38,7 @@
             padding: 5px;
             text-align: center;
         }
-    
+
         .btn_delete {
             display: flex;
             align-self: center;
@@ -58,7 +63,7 @@
         width: 28%;
         top: 100px;
         right: 30px;
-        background: #0797ff;
+        background: #4658C9;
         box-shadow: 5px 5px 20px rgba($color: #000000, $alpha: 0.3);
         color: #ffff;
 

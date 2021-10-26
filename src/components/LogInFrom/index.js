@@ -46,6 +46,10 @@ const LogInForm = ({ setSelectForm }) => {
             history.push("/")
 
         } catch ( err ) {
+            if(err == "FirebaseError: Firebase: The password is invalid or the user does not have a password. (auth/wrong-password)." 
+            || "FirebaseError: Firebase: There is no user record corresponding to this identifier. The user may have been deleted. (auth/user-not-found)." ) {
+                setError( "email o contraseña incorrecta, intenta de nuevo!!" )
+            }
             console.log(`%%%%% ${ err }`)
         }
         
